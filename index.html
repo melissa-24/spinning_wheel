@@ -1,13 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the Wheel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Spin the Wheel</h1>
+        
+        <!-- Step 1: Choose Number of Options -->
+        <form id="numOptionsForm">
+            <label for="numOptions">Number of Options:</label>
+            <select id="numOptions">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8" selected>8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+            </select>
+            <button type="submit">Set Options</button>
+        </form>
+
+        <!-- Step 2: Input Words -->
+        <form id="optionsForm" style="display: none;">
+            <div id="optionsContainer"></div>
+            <button type="submit">Update Wheel</button>
+        </form>
+
+        <!-- The Wheel -->
+        <div class="wheel-container">
+            <div id="box" class="wheel"></div>
+        </div>
+        
+        <button id="spinButton" class="spin-button">Spin</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
